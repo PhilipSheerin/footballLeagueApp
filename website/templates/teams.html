@@ -1,0 +1,48 @@
+{% extends "base.html" %} 
+{% block title %}Home{% endblock %} 
+{% block content %}
+        
+<div class = "container">
+    <div class ="row">
+        <div class="col-sm text-center">
+
+            <div class="ptable">
+                <h1 class="headin">Team 1</h1>
+                <table>
+                    <tr class="col">
+                        <th>Player</th>
+                    </tr>
+
+                {% for item in team1 %}
+                        <tr class="wpos">
+                            <td>{{item.playerName}}</td>
+                        </tr>
+                {% endfor %}
+                    
+                </table>
+            </div>
+        </div>
+
+        <div class="col-sm text-center">
+            <h1>VS</h1>
+        </div>
+
+        <div class="col-sm text-center">
+            <div class="ptable">
+                <h1 class="headin">Team 2</h1>
+                <table>
+                    <tr class="col">
+                        <th>Player</th>
+                    </tr>
+                {% for item in team2 %}
+                        <tr class="lpos">
+                            <td>{{item.playerName}}</td>
+                        </tr>
+                {% endfor %}
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

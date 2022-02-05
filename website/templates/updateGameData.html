@@ -1,0 +1,77 @@
+{% extends "base.html" %} 
+
+{% block title %}Home{% endblock %} 
+
+{% block content %}
+<div class="ptable">
+    <h1 class="headin">Game data updates</h1>
+        <table>
+            <tr class="col">
+                <th>User ID</th>
+                <th>Player Name</th>
+                <th>+ Win</th>
+                <th>+ Loss</th>
+                <th>+ Draw</th>
+                <th>- Win</th>
+                <th>- Loss</th>
+                <th>- Draw</th>
+            </tr>
+
+        {% for item in data %}
+            <tr class="wpos">
+                <td>{{item.userID}}</td>
+                <td>{{item.playerName}}</td>
+                <td>
+                    <form method="POST">
+                        {{ winGameButton.hidden_tag() }}
+                        {{ winGameButton.userID(default = item.userID.data)}}
+                        {{ winGameButton.submit(class="btn btn-success") }}
+                    </form>
+                </td>
+
+                <td>
+                    <form method="POST">
+                        {{ drawGameButton.hidden_tag() }}
+                        {{ drawGameButton.userID(default = item.userID.data)}}
+                        {{ drawGameButton.submit(class="btn btn-secondary") }}
+                    </form>
+                </td>
+
+                <td>
+                    <form method="POST">
+                        {{ loseGameButton.hidden_tag() }}
+                        {{ loseGameButton.userID(default = item.userID.data)}}
+                        {{ loseGameButton.submit(class="btn btn-danger") }}
+                    </form>
+                </td>
+
+                <td>
+                    <form method="POST">
+                        {{ mwinGameButton.hidden_tag() }}
+                        {{ mwinGameButton.userID(default = item.userID.data)}}
+                        {{ mwinGameButton.submit(class="btn btn-outline-success") }}
+                    </form>
+                </td>
+
+                <td>
+                    <form method="POST">
+                        {{ mdrawGameButton.hidden_tag() }}
+                        {{ mdrawGameButton.userID(default = item.userID.data)}}
+                        {{ mdrawGameButton.submit(class="btn btn-outline-secondary") }}
+                    </form>
+                </td>
+
+                <td>
+                    <form method="POST">
+                        {{ mloseGameButton.hidden_tag() }}
+                        {{ mloseGameButton.userID(default = item.userID.data)}}
+                        {{ mloseGameButton.submit(class="btn btn-outline-danger") }}
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+            
+        </table>
+    </div>
+
+{% endblock %} 

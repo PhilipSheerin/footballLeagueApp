@@ -1,0 +1,114 @@
+{% extends "base.html" %} 
+{% block title %}Home{% endblock %} 
+{% block content %}
+        
+<div class = "container">
+    <div class ="row">
+        <div class="col-sm text-center">
+			<div class="ptable">
+				<h1 class="headin">Premier League Table</h1>
+					<table>
+						<tr class="col">
+							<th>#</th>
+							<th>Player Name</th>
+							<th>MP</th>
+							<th>W</th>
+							<th>D</th>
+							<th>L</th>
+							<th>Pts</th>
+						</tr>
+
+					{% for item in data %}
+						{% if loop.index <= 4%}
+							<tr class="wpos">
+								<td>{{loop.index}}</td>
+								<td>{{item.playerName}}</td>
+								<td>{{item.matchesPlayed}}</td>
+								<td>{{item.winGame}}</td>
+								<td>{{item.drawGame}}</td>
+								<td>{{item.loseGame}}</td>
+								<td>{{item.points}}</td>
+							</tr>
+						{% elif loop.index > 17%}
+							<tr class="lpos">
+								<td>{{loop.index}}</td>
+								<td>{{item.playerName}}</td>
+								<td>{{item.matchesPlayed}}</td>
+								<td>{{item.winGame}}</td>
+								<td>{{item.drawGame}}</td>
+								<td>{{item.loseGame}}</td>
+								<td>{{item.points}}</td>
+							</tr>
+						{% else %}
+							<tr class="pos">
+								<td>{{loop.index}}</td>
+								<td>{{item.playerName}}</td>
+								<td>{{item.matchesPlayed}}</td>
+								<td>{{item.winGame}}</td>
+								<td>{{item.drawGame}}</td>
+								<td>{{item.loseGame}}</td>
+								<td>{{item.points}}</td>
+							</tr>
+
+						{% endif %}
+					
+					{% endfor %}
+					</table>
+			</div>
+		</div>
+		<div class="col-sm text-center">
+				<div class="ptable">
+					<h1 class="headin">Championship League Table</h1>
+						<table>
+							<tr class="col">
+								<th>#</th>
+								<th>Player Name</th>
+								<th>MP</th>
+								<th>W</th>
+								<th>D</th>
+								<th>L</th>
+								<th>Pts</th>
+							</tr>
+	
+						{% for item in data %}
+							{% if loop.index <= 4%}
+								<tr class="wpos">
+									<td>{{loop.index}}</td>
+									<td>{{item.playerName}}</td>
+									<td>{{item.matchesPlayed}}</td>
+									<td>{{item.winGame}}</td>
+									<td>{{item.drawGame}}</td>
+									<td>{{item.loseGame}}</td>
+									<td>{{item.points}}</td>
+								</tr>
+							{% elif loop.index > 17%}
+								<tr class="lpos">
+									<td>{{loop.index}}</td>
+									<td>{{item.playerName}}</td>
+									<td>{{item.matchesPlayed}}</td>
+									<td>{{item.winGame}}</td>
+									<td>{{item.drawGame}}</td>
+									<td>{{item.loseGame}}</td>
+									<td>{{item.points}}</td>
+								</tr>
+							{% else %}
+								<tr class="pos">
+									<td>{{loop.index}}</td>
+									<td>{{item.playerName}}</td>
+									<td>{{item.matchesPlayed}}</td>
+									<td>{{item.winGame}}</td>
+									<td>{{item.drawGame}}</td>
+									<td>{{item.loseGame}}</td>
+									<td>{{item.points}}</td>
+								</tr>
+	
+							{% endif %}
+						
+						{% endfor %}
+						</table>
+				</div>
+			</div>
+		</div>
+	</div> <!--end row-->
+<div>
+{% endblock %} 

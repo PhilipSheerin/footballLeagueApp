@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
+
+<div class="container">
+        <br>
+                <form method="POST">
+                    {{ deleteUserForm.hidden_tag() }}
+
+                    {{ deleteUserForm.userID.label(class="form-label") }}
+                    {{ deleteUserForm.userID(class="form-control") }}
+                    <br/> 
+                    {{ deleteUserForm.submit(class="btn btn-primary") }}
+                  </form>
+        <br>
+</div>
+
+{% endblock %} 

@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
+
+<div class="container">
+    <br>
+        <form method="POST">
+            {{ addPlayerForm.hidden_tag() }}
+
+            {{ addPlayerForm.playerName.label(class="form-label") }}
+            {{ addPlayerForm.playerName(class="form-control") }}
+
+            {{ addPlayerForm.dominantFoot.label(class="form-label") }}
+            {{ addPlayerForm.dominantFoot(class="form-control") }}
+
+            {{ addPlayerForm.position.label(class="form-label") }}
+            {{ addPlayerForm.position(class="form-control") }}
+
+            {{ addPlayerForm.attendance.label(class="form-label") }}
+            {{ addPlayerForm.attendance(class="form-control") }}
+
+            <br/> 
+            {{ addPlayerForm.submit(class="btn btn-primary") }}
+            </form>
+    <br>
+</div>
+
+{% endblock %} 
